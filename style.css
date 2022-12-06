@@ -58,17 +58,30 @@ body {
 
 .nav-button {
   align-items: center;
-  background-color: hsla(0, 0%, 100%, 30%);
+  background-color: hsl(0, 0%, 100%);
   border-radius: 50px;
   cursor: pointer;
   display: flex;
   font-size: 2rem;
-  height: 8vmin;
+  height: 6vmin;
   justify-content: center;
+  opacity: 30%;
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  width: 8vmin;
+  transition: 200ms;
+  width: 6vmin;
+}
+
+.nav-button:hover {
+  opacity: 100%;
+  transform: translate(0, -50%) scale(1.2);
+}
+
+.nav-button:active {
+  opacity: 10%;
+  transform: translate(0, -50%) scale(0.8);
+  transition: 20ms;
 }
 
 #left-arrow {
