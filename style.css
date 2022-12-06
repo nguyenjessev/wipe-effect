@@ -1,22 +1,53 @@
 body {
   margin: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .img-container {
   height: 100vh;
   overflow: hidden;
   position: absolute;
+  transition: cubic-bezier(.52,.03,.38,.97) 1000ms;
   width: 100vw;
-  left: 100%;
 }
 
-.img-container[data-active="true"] {
+.img-container[data-status="active"] {
   left: 0;
+}
+
+.img-container[data-status="right"] {
+  left: 100vw;
+}
+
+.img-container[data-status="left"] {
+  left: -100vw;
 }
 
 .img-container > img {
   height: 100%;
   object-fit: cover;
   width: 100%;
+}
+
+.nav-button {
+  align-items: center;
+  background-color: hsla(0, 0%, 100%, 30%);
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  font-size: 2rem;
+  height: 8vmin;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 8vmin;
+}
+
+#left-arrow {
+  left: 4vmin;
+}
+
+#right-arrow {
+  right: 4vmin;
 }

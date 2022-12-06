@@ -10,10 +10,15 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="img-container" data-index="1" data-active="true"><img src="img_1.jpg" alt=""></div>
-  <div class="img-container" data-index="2"><img src="img_2.jpg" alt=""></div>
-  <div class="img-container" data-index="3"><img src="img_3.jpg" alt=""></div>
-  <div class="img-container" data-index="4"><img src="img_4.jpg" alt=""></div>
-  <div class="img-container" data-index="5"><img src="img_5.jpg" alt=""></div>
+  <div class="img-container" data-index="0" data-status="active"><img src="img_1.jpg" alt=""></div>
+  <div class="img-container" data-index="1" data-status="right"><img src="img_2.jpg" alt=""></div>
+  <div class="img-container" data-index="2" data-status="right"><img src="img_3.jpg" alt=""></div>
+  <div class="img-container" data-index="3" data-status="right"><img src="img_4.jpg" alt=""></div>
+  <div class="img-container" data-index="4" data-status="left"><img src="img_5.jpg" alt=""></div>
+
+  <div id="nav-buttons">
+    <div class="nav-button" id="left-arrow"><</div>
+    <div class="nav-button" id="right-arrow">></div>
+  </div>
 </body>
 </html>
