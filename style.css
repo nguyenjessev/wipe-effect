@@ -1,6 +1,9 @@
 body {
+  height: 100vh;
   margin: 0;
-  /* overflow: hidden; */
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
 }
 
 .img-container {
@@ -13,19 +16,43 @@ body {
 
 .img-container[data-status="active"] {
   left: 0;
-}
-
-.img-container[data-status="right"] {
-  left: 100vw;
+  z-index: 1;
 }
 
 .img-container[data-status="left"] {
   left: -100vw;
 }
 
+.img-container[data-status="right"] {
+  left: 100vw;
+}
+
+.img-container[data-status="becoming-left"] {
+  left: -100vw;
+  transition: none;
+}
+
+.img-container[data-status="becoming-right"] {
+  left: 100vw;
+  transition: none;
+}
+
+.img-container[data-status="left"] > img,
+.img-container[data-status="becoming-left"] > img {
+  transform: translate(50%, 0);
+  position: absolute;
+}
+
+.img-container[data-status="right"] > img,
+.img-container[data-status="becoming-right"] > img {
+  transform: translate(-50%, 0);
+  position: absolute;
+}
+
 .img-container > img {
   height: 100%;
   object-fit: cover;
+  transition: cubic-bezier(.52,.03,.38,.97) 1000ms;
   width: 100%;
 }
 
@@ -46,8 +73,10 @@ body {
 
 #left-arrow {
   left: 4vmin;
+  z-index: 2;
 }
 
 #right-arrow {
   right: 4vmin;
+  z-index: 2;
 }
