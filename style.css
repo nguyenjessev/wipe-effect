@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.img-container {
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  width: 100vw;
+  left: 100%;
+}
+
+.img-container[data-active="true"] {
+  left: 0;
+}
+
+.img-container > img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
