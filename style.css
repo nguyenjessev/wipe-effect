@@ -15,25 +15,21 @@ body {
 }
 
 .img-container[data-status="active"] {
-  left: 0;
-  z-index: 1;
+  transform: translate(0, 0);
 }
 
-.img-container[data-status="left"] {
-  left: -100vw;
-}
-
-.img-container[data-status="right"] {
-  left: 100vw;
-}
-
+.img-container[data-status="left"],
 .img-container[data-status="becoming-left"] {
-  left: -100vw;
-  transition: none;
+  transform: translate(-100vw, 0);
 }
 
+.img-container[data-status="right"],
 .img-container[data-status="becoming-right"] {
-  left: 100vw;
+  transform: translate(100vw, 0);
+}
+
+.img-container[data-status="becoming-left"],
+.img-container[data-status="becoming-right"] {
   transition: none;
 }
 
