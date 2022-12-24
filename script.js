@@ -1,8 +1,8 @@
 const numTiles = document.getElementsByClassName('img-container').length;
 
-document.getElementById('left-arrow').addEventListener('click', (e) => {
+document.getElementById('left-arrow').addEventListener('click', () => {
   const activeTile = document.querySelector('[data-status="active"');
-  const currentIndex = parseInt(activeTile.dataset.index);
+  const currentIndex = parseInt(activeTile.dataset.index, 10);
   const nextIndex = currentIndex < (numTiles - 1) ? (currentIndex + 1) : 0;
   const rightTile = document.querySelector(`[data-index="${nextIndex}"]`);
 
@@ -15,9 +15,9 @@ document.getElementById('left-arrow').addEventListener('click', (e) => {
   nextRightTile.dataset.status = 'becoming-right';
 });
 
-document.getElementById('right-arrow').addEventListener('click', (e) => {
+document.getElementById('right-arrow').addEventListener('click', () => {
   const activeTile = document.querySelector('[data-status="active"');
-  const currentIndex = parseInt(activeTile.dataset.index);
+  const currentIndex = parseInt(activeTile.dataset.index, 10);
   const nextIndex = currentIndex > 0 ? (currentIndex - 1) : (numTiles - 1);
   const leftTile = document.querySelector(`[data-index="${nextIndex}"]`);
 
